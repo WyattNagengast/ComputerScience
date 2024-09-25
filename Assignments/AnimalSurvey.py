@@ -1,0 +1,6 @@
+user_input1 = input("What is your favorite animal?\n>")
+user_input2 = input("What sound does the animal make?\n>")
+user_input3 = input("Where do they live?\n>")
+user_input4 = input("What is a fun fact about them?\n>")
+user_input5 = input("What does it eat?\n>")
+print("What is your favorite animal " + user_input1 + " What sound does the animal make " + user_input2 + " Where do they live " + user_input3 + " What is a fun fact about them " + user_input4 + " What do they eat " + user_input5)
