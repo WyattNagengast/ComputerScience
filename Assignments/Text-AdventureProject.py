@@ -139,6 +139,74 @@ def hatchet_a_d():
         print("Invalid answer please try again.")
         hatchet_a_d()
 
+def make_trapd():
+    print("1. hidden partialy dug in wood spears")
+    print("2. swinging log")
+    print("3. falling trees")
+    choice = input("> ")
+    if choice == "1":
+        wood_spearsd()
+    elif choice == "2":
+        swinging_logd()
+    elif choice == "3":
+        falling_treesd()
+    else:
+        print("Invalid answer please try again.")
+        make_trapd()
+
+def wood_spearsd():                 #encounter
+    print("After digging wooded spikes, how are you going to get the deer to impale themselves.")
+    print("1. throw your hatchet, and stones to direct them towards it")
+    print("2. charge in for mele from opposite direction of the wooden spikes")
+
+    choice = input("> ")
+    if choice == "1":
+        throwwc_stones_directd()
+    elif choice == "2":
+        mele_wooden_spikesd()
+    else:
+        print("Invalid answer please try again.")
+        wooden_spearsd()
+
+def falling_treesd():            #roll
+    print("With you hatchet and some vines you cut trees in a way that will make them fall at the bear, while holding the trees up until the vines are cut.")
+    print("Roll for success")
+    roll = random.randrange(1,20)
+    print(roll)
+    if roll >= 10:
+        three_deer()
+    elif roll < 5:
+        two_deer()
+
+def swinging_logd():            #roll
+    print("With some vines you successfully make a swinging log trap, and relese it at your target. Roll for success.")
+    roll = random.randrange(1,20)
+    print(roll)
+    if roll >= 15:
+        success_hunt()
+    elif roll >= 10:
+        two_swing_hitd()
+    else:
+        fail_swing_logd()
+
+def fail_swing_logd():          #encounter repeate word change
+    print("The log missed the deers. Do you:")
+    print("1. throw axe at the deer")
+    print("2. charge in for mele")
+
+    choice = input("> ")
+    if choice == "1":
+        throw_weapond()
+    elif choice == "2":
+        mele_attackd()
+    else:
+        print("Invalid answer please try again.")
+        fail_swing_logd()
+
+def two_swing_hitd():
+    print("You see your trap miss and the deer begining to run away from you and then the log swings back and hits the deer.")
+    success_hunt()
+
 def throw_weapond():
     print("You decide to throw your weapon at the deer.\nRoll for success.")
     roll = random.randrange(1,20)
@@ -187,6 +255,10 @@ def catch_up_to_deer_nowc():        #roll
     else:
         dead_faild()
 
+def dead_faild():
+    print("While you grapple with one of the deer, you are attaked by another deer and are killed.")
+    game_over()
+
 def one_deer_collectwc():           #roll
     print("After killing the deer you grapled with you attempt to locate your weapon. Roll for succes.")
     roll = random.randrange(1,20)
@@ -195,6 +267,32 @@ def one_deer_collectwc():           #roll
         findwc_one_deer()
     else:
         fail_findwc_one_deer()
+
+def fail_findwc_one_deer():
+    print("You fail to wind your weapon and give up. Do you:")
+    print("1. attempt to head home")
+    print("2. stop and eat before heading home")
+    choice = input("> ")
+    if choice == "1":
+        attempt_to_head_home()      #endding 2
+    elif choice == "2":
+        head_home_after_eating()
+    else:
+        print("Invalid answer please try again.")
+        fail_findwc_one_deer()
+
+def findwc_one_deer():
+    print("You find your weapon and begin to head home. Do you:")
+    print("1. attempt to head home")
+    print("2. stop and eat before heading home")
+    choice = input("> ")
+    if choice == "1":
+        attempt_to_head_home()      #endding 2
+    elif choice == "2":
+        head_home_after_eating()
+    else:
+        print("Invalid answer please try again.")
+        findwc_one_deer()
 
 def chase_deer_with_wc():       #roll
     print("Roll for successfull chase.")
@@ -489,14 +587,14 @@ def make_trapb():           #choice 6       #encounter
     if choice == "1":
         wood_spearsb()
     elif choice == "2":
-        swinging_log()
+        swinging_logb()
     elif choice == "3":
-        falling_trees()
+        falling_treesb()
     else:
         print("Invalid answer please try again.")
         make_trapb()
 
-def falling_trees():            #roll
+def falling_treesb():            #roll
     print("With you hatchet and some vines you cut trees in a way that will make them fall at the bear, while holding the trees up until the vines are cut.")
     print("Roll for success")
     roll = random.randrange(1,20)
@@ -532,18 +630,18 @@ def flea_falling_trees():           #roll
     else:
         fail_flea()
 
-def swinging_log():         #roll
+def swinging_logb():         #roll
     print("With some vines you successfully make a swinging log trap, and relese it at your target. Roll for success.")
     roll = random.randrange(1,20)
     print(roll)
     if roll >= 15:
         success_hunt()
     elif roll >= 10:
-        two_swing_hit()
+        two_swing_hitb()
     else:
         fail_swing_logb()
 
-def two_swing_hit():
+def two_swing_hitb():
     print("You see your trap miss and the bear begining to charge at you and then the log swings back and hits the bear.")
     success_hunt()
 
@@ -573,9 +671,8 @@ def flea_swing_log():
     else:
         fail_flea()
 
-
 def success_hunt():         #encounter
-    print("You successfully captured/killed your pray.")
+    print("You successfully captured/killed your pray. Do you:")
     print("1. attempt to head home")
     print("2. stop and eat before heading home")
     choice = input("> ")
