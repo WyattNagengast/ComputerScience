@@ -221,13 +221,13 @@ def mele_wooden_spikesd():                  #roll
         zero_deer()
 
 def falling_treesd():            #roll
-    print("With you hatchet and some vines you cut trees in a way that will make them fall at the bear, while holding the trees up until the vines are cut.")
+    print("With you hatchet and some vines you cut trees in a way that will make them fall at the bear,\nwhile holding the trees up until the vines are cut.")
     print("Roll for success")
     roll = random.randrange(1,20)
     print(roll)
     if roll >= 10:
         three_deer()
-    elif roll < 5:
+    elif roll < 10:
         two_deer()
 
 def swinging_logd():            #roll
@@ -264,11 +264,15 @@ def throw_weapond():                #roll
     roll = random.randrange(1,20)
     print(roll)
     if roll >= 16:
-        successb_throw_shoot()
+        successd_throw_shoot()
     elif roll >= 10:
         miss_throw()
     elif roll < 10:
         fail_throw()
+
+def successd_throw_shoot():
+    print("You hit one of the deer in a fatal spot.")
+    success_hunt()
 
 def miss_throw():             #encounter 13
     print("After throwing your weapons you miss all your targets, and they run away. Do you:")
@@ -400,7 +404,7 @@ def zero_deer():            #encounter 18
 
 def mele_attackd():         #roll
     print("You charge at the deer herd to kill as many as you can. Roll for success.")
-    roll = random.randrang(1,20)
+    roll = random.randrange(1,20)
     print(roll)
     if roll >= 16:
         three_deer()
@@ -412,7 +416,7 @@ def mele_attackd():         #roll
         zero_deer_mele()
 
 def three_deer():
-    print("You manage to catch three deer, and decide that your hunt was a complete success and head home, thus endding your hunt.")
+    print("You manage to catch three deer, and decide that your hunt was a complete success and head home,\nthus endding your hunt.")
     game_over()
 
 def two_deer():
@@ -443,7 +447,7 @@ def make_camp():            #endding
     game_over()
 
 def attempt_head_home_broke_ankle():                #endding
-    print("You attampted to head home with your broken ankle, but you fell into a pit before you left the forest and never got out.")
+    print("You attampted to head home with your broken ankle,\nbut you fell into a pit before you left the forest and never got out.")
     game_over()
 
 def attack_prep():              #choice set 5
@@ -529,7 +533,7 @@ def fail_shootb():              #encounter 22
 
 def flea_crossbow():
     print("After fleaing from the bear you decide to head home, because you are out of crossbow bolts.")
-    head_home()
+    game_over()
 
 def bleed_bear():
     print("After waiting a while the bear collapses.")
@@ -648,7 +652,7 @@ def make_trapb():           #choice 6       #encounter 25
         make_trapb()
 
 def falling_treesb():            #roll
-    print("With you hatchet and some vines you cut trees in a way that will make them fall at the bear, while holding the trees up until the vines are cut.")
+    print("With you hatchet and some vines you cut trees in a way that will make them fall at the bear,\nwhile holding the trees up until the vines are cut.")
     print("Roll for success")
     roll = random.randrange(1,20)
     print(roll)
@@ -684,7 +688,7 @@ def flea_falling_trees():           #roll
         fail_flea()
 
 def swinging_logb():         #roll
-    print("With some vines you successfully make a swinging log trap, and relese it at your target. Roll for success.")
+    print("With some vines you successfully make a swinging log trap, and relese it at your targets. Roll for success.")
     roll = random.randrange(1,20)
     print(roll)
     if roll >= 15:
@@ -752,7 +756,7 @@ def wood_spearsb():         #choice 7       #encounter 29
 
 def self_bait():        #roll
     print("Roll for success.")
-    roll = random.randrand(1,20)
+    roll = random.randrange(1,20)
     print(roll)
     if roll >= 14:
         success_hunt()
@@ -790,3 +794,5 @@ def success_deathtb():        #endding 4
 def death_failtb():            #endding 5
     print("You failed to get the bear to hit the spears and died.")
     game_over()
+
+start_adventure()
