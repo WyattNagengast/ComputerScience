@@ -1,4 +1,5 @@
-numbers = [34, 5, 60, 24, 5, 99]
+import random
+numbers = [random.randint(0,101), random.randint(0,101), random.randint(0,101), random.randint(0,101), random.randint(0,101)]
 print(numbers)
 
 def bubble_sort(n):
@@ -14,3 +15,4 @@ def bubble_sort(n):
     print(str(steps) + " steps to complete.")
 
 bubble_sort(numbers)
+
